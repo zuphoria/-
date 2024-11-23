@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Vazirmatn:wght@100..900&family=Vibes&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Vibes&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drama News</title>
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color:#008080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            float: right;
+            display: block;
+            color: white;
+            text-align: rtl;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #E6E6FA;
+            color: black;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        .main-content {
+            width: 70%;
+            margin-right: 20px;
+        }
+        .side-content {
+            width: 30%;
+        }
+        .article {
+            background-color: #20B2AA;
+};
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .article h2 {
+            font-size: 24px;
+        }
+        .article p {
+            color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .form-container {
+            width: 40%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #555;
+        }
+        .form-container p {
+            text-align: center;
+        }
+        .form-container a {
+            color: #333;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>دراما نیوز</h1>
+    <p>اوقات فراغت شما</p>
+</header>
+
+<nav>
+    <a href="javascript:void(0);" onclick="showPage('home')">خانه</a>
+    <a href="javascript:void(0);" onclick="showPage('signup')">ثبت نام</a>
+    <a href="javascript:void(0);" onclick="showPage('login')">ورود</a>
+</nav>
+
+<!-- صفحه خانه -->
+<div id="home" class="container hidden">
+    <div class="main-content">
+        <div class="article">
+            <h2 dir="rtl">گربه های شریعتی پلنگ شدند</h2>
+            <p dir="rtl">دانشگاه شریعتی محل پرورش پلنگان از دو نوع انسان و حیوان شد...</p>
+            <a href="#">بیشتر بخوانید...</a>
+        </div>
+
+        <div class="article">
+            <h2 dir="rtl">حافظی تابوشکنی را گردن گرفت</h2>
+            <p dir="rtl">ماولین حضور دانشجوی پسر در کلاس های مجازی شریعتی...</p>
+            <a href="#">بیشتر بخوانید...</a>
+        </div>
+    </div>
+
+    <div class="side-content">
+        <h3 dir="rtl">دسته‌بندی‌ها</h3>
+        <ul>
+            <li dir="rtl"><a href="#">داغ ترین ها</a></li>
+            <li dir="rtl"><a href="#">شایعات</a></li>
+            <li dir="rtl"><a href="#">تحقیقات میدانی</a></li>
+            <li dir="rtl"><a href="#">ارسال مردمی</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- صفحه ثبت نام -->
+<div id="signup" class="form-container hidden">
+    <h2>فرم ثبت نام</h2>
+    <form id="signupForm">
+        <input type="text" name="frstname" placeholder="نام" required>
+        <input type="text" name="lastname" placeholder="نام خانوادگی" required>
+        <input type="password" name="password" placeholder="رمز عبور" required>
+        <input type="password" name="confirm-password" placeholder="تأیید رمز عبور" required>
+        <button type="button" onclick="signup()">ثبت نام</button>
+    </form>
+    <p>حساب کاربری دارید؟ <a href="javascript:void(0);" onclick="showPage('login')">ورود به حساب</a></p>
+</div>
+
+<!-- صفحه ورود -->
+<div id="login" class="form-container hidden">
+    <h2>ورود به حساب کاربری</h2>
+    <form id="loginForm">
+        <input type="text" name="frstname" placeholder="نام" required>
+        <input type="text" name="lastname" placeholder="نام خانوادگی" required>
+        <input type="password" name="password" placeholder="رمز عبور" required>
+        <button type="button" onclick="login()">ورود</button>
+    </form>
+    <p>حساب کاربری ندارید؟ <a href="javascript:void(0);" onclick="showPage('signup')">ثبت نام کنید</a></p>
+</div>
+
+<footer>
+    <p>&copy; 2024  تمامی حقوق محفوظ است.</p>
+</footer>
+
+<script>
+    function showPage(page) {
+        // مخفی کردن تمامی صفحات
+        document.getElementById('home').classList.add('hidden');
+        document.getElementById('signup').classList.add('hidden');
+        document.getElementById('login').classList.add('hidden');
+
+        // نمایش صفحه انتخاب شده
+        document.getElementById(page).classList.remove('hidden');
+    }
+
+    function login() {
+        // اعتبارسنجی ساده برای ورود
+        let loginForm = document.getElementById('loginForm');
+        let username = loginForm.elements['frstname'].value;
+        let password = loginForm.elements['password'].value;
+
+        if (username && password) {
+            alert("ورود موفقیت‌آمیز");
+            showPage('home'); // نمایش صفحه خانه پس از ورود موفق
+        } else {
+            alert("اشکال در ورود");
+        }
+    }
+
+    function signup() {
+        // اعتبارسنجی فرم ثبت نام
+        let signupForm = document.getElementById('signupForm');
+        let password = signupForm.elements['password'].value;
+        let confirmPassword = signupForm.elements['confirm-password'].value;
+
+        if (password !== confirmPassword) {
+            alert("رمز عبور با تأیید رمز عبور مطابقت ندارد.");
+        } else {
+            alert("ثبت نام موفقیت‌آمیز");
+            showPage('login'); // نمایش صفحه ورود پس از ثبت نام موفق
+        }
+    }
+</script>
+
+</body>
+</html>
